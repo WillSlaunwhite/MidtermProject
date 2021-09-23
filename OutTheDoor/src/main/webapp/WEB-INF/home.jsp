@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +9,9 @@
 <title>Out The Door</title>
 </head>
 <body>
-HELLO
+<h1>OutTheDoor!</h1>
+
+${DEBUG}
+
 </body>
 </html>
