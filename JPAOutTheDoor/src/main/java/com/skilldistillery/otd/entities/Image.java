@@ -25,4 +25,45 @@ public class Image {
 	@Column(name="date_added")
 	private LocalDate dateAdded;
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getImageURL() {
+		return imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+	}
+
+	public int getStringId() {
+		return stringId;
+	}
+
+	public void setStringId(int stringId) {
+		this.stringId = stringId;
+	}
+
+	public int getActivityId() {
+		return activityId;
+	}
+
+	public void setActivityId(int activityId) {
+		this.activityId = activityId;
+	}
+
+	public LocalDate getDateAdded() {
+		return dateAdded;
+	}
+
+	public void setDateAdded(LocalDate dateAdded) {
+		this.dateAdded = dateAdded;
+	}
+	
+
 }
