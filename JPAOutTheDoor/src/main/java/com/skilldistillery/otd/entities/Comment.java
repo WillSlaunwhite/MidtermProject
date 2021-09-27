@@ -1,12 +1,16 @@
 package com.skilldistillery.otd.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Comment {
@@ -16,11 +20,32 @@ public class Comment {
 	
 	private String description;
 	
-	@Column(name="user_id")
-	private int userId;
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
 	
-	@Column(name="activity_id")
-	private int activityId;
+	@ManyToOne
+	@JoinColumn(name="activity_id")
+	private Activity activity;
+	
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Activity getActivity() {
+		return activity;
+	}
+
+	public void setActivity(Activity activity) {
+		this.activity = activity;
+	}
+
+	
 	
 	@Column(name="create_date")
 	private LocalDateTime createDate;
@@ -44,21 +69,6 @@ public class Comment {
 		this.description = description;
 	}
 
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
-	public int getActivityId() {
-		return activityId;
-	}
-
-	public void setActivityId(int activityId) {
-		this.activityId = activityId;
-	}
 
 	public LocalDateTime getCreateDate() {
 		return createDate;
@@ -70,13 +80,12 @@ public class Comment {
 
 	@Override
 	public String toString() {
-		return "Comment [id=" + id + ", description=" + description + ", userId=" + userId + ", activityId="
-				+ activityId + ", createDate=" + createDate + "]";
+		return "Comment [id=" + id + ", description=" + description +  ", createDate=" + createDate + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(activityId, createDate, description, id, userId);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -88,9 +97,9 @@ public class Comment {
 		if (getClass() != obj.getClass())
 			return false;
 		Comment other = (Comment) obj;
-		return activityId == other.activityId && Objects.equals(createDate, other.createDate)
-				&& Objects.equals(description, other.description) && id == other.id && userId == other.userId;
+		return id == other.id;
 	}
+
 	
 	
 	

@@ -1,11 +1,13 @@
 package com.skilldistillery.otd.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Location {
@@ -22,9 +24,20 @@ public class Location {
 	@Column(name="zip_code")
 	private String zipCode;
 	
-	private double latitude;
+	private Double latitude;
 	
-	private String longitude;
+	private Double longitude;
+	
+	@OneToMany(mappedBy="location")
+	private List<Activity> activities;
+	
+	public List<Activity> getActivities() {
+		return activities;
+	}
+
+	public void setActivities(List<Activity> activities) {
+		this.activities = activities;
+	}
 
 	public Location() {
 	}
@@ -77,11 +90,11 @@ public class Location {
 		this.latitude = latitude;
 	}
 
-	public String getLongitude() {
+	public double getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(String longitude) {
+	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
 
