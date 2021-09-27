@@ -7,8 +7,6 @@ import javax.persistence.Id;
 
 @Entity
 public class Rating {
-//	 Not entirely sure the correct way to do two primary ids for rating,
-//	 so leaving these placeholders here for now until we map relationship properly.
 	
 	@EmbeddedId
 	private RatingId id;

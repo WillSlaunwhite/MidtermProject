@@ -6,6 +6,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 
 @Entity
 public class Image {
@@ -16,11 +19,13 @@ public class Image {
 	@Column(name="image_url")
 	private String imageURL;
 	
-	@Column(name="user_id")
-	private int stringId;
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
 	
-	@Column(name="activity_id")
-	private int activityId;
+	@ManyToOne
+	@JoinColumn(name="activity_id")
+	private Activity activity;
 	
 	@Column(name="date_added")
 	private LocalDate dateAdded;
@@ -41,20 +46,21 @@ public class Image {
 		this.imageURL = imageURL;
 	}
 
-	public int getStringId() {
-		return stringId;
+
+	public User getUser() {
+		return user;
 	}
 
-	public void setStringId(int stringId) {
-		this.stringId = stringId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public int getActivityId() {
-		return activityId;
+	public Activity getActivity() {
+		return activity;
 	}
 
-	public void setActivityId(int activityId) {
-		this.activityId = activityId;
+	public void setActivity(Activity activity) {
+		this.activity = activity;
 	}
 
 	public LocalDate getDateAdded() {
