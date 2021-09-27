@@ -1,19 +1,19 @@
 package com.skilldistillery.otd.entities;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class Rating {
 //	 Not entirely sure the correct way to do two primary ids for rating,
 //	 so leaving these placeholders here for now until we map relationship properly.
 	
-//	@Id
-//	@Column(name="activity_id")
-//	private int userId;	
+	@EmbeddedId
+	private RatingId id;
 	
-//	@Id
-//	@Column(name="activity_id")
-//	private int activityId;
+	
 	
 	private int rating;
 	
