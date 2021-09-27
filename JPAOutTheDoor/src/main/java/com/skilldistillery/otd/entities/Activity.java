@@ -42,6 +42,9 @@ public class Activity {
 	
 	private int difficulty;
 	
+	@Column(name="distance_miles")
+	private int distanceInMiles;
+	
 	
 	
 	
