@@ -25,18 +25,14 @@ public class HomeController {
 		model.addAttribute("DEBUG", userDao.findByUsername("admin"));
 		return "home";
 	}
-//	@RequestMapping(path="getAllHiking.do", method=RequestMethod.GET)
-//	public String allHikes(Model model) {
-//		model.addAttribute("results", searchDao.findAllHikes());
-//		return "allHikes";
+	@RequestMapping(path="getAllHiking.do", method=RequestMethod.GET)
+	public String allHikes(Model model) {
+		model.addAttribute("results", searchDao.findAllHikes());
+		return "allHikes";
 		
 		
-//	}
-	@RequestMapping(path = "getAllHiking.do")
-	public String findActivity(Model model) {
-		model.addAttribute("activity", searchDao.findActivityByCategory());
-		return "test";
 	}
+	
 	
 	
 	
