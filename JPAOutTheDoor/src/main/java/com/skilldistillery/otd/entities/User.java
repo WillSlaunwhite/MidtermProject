@@ -1,11 +1,14 @@
 package com.skilldistillery.otd.entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -13,11 +16,24 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String username;
 	private String password;
 	private boolean enabled;
 	private String role;
+
+	@OneToMany(mappedBy = "user")
+	private List<Image> images;
+	@OneToMany(mappedBy = "user")
+	private List<Comment> comments;
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
 
 	public User() {
 		super();
@@ -59,6 +75,14 @@ public class User {
 		return role;
 	}
 
+	public List<Image> getImages() {
+		return images;
+	}
+
+	public void setImages(List<Image> images) {
+		this.images = images;
+	}
+
 	public void setRole(String role) {
 		this.role = role;
 	}
@@ -66,6 +90,27 @@ public class User {
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
+	}
+
+	public void addImage(Image image) {
+		if (images == null)
+			images = new ArrayList<>();
+
+		if (!images.contains(image)) {
+			images.add(image);
+			if (image.getUser() != null) {
+				image.getUser().getImages().remove(image);
+			}
+			image.setUser(this);
+		}
+	}
+
+	public void removeImage(Image image) {
+		image.setUser(null);
+		if (image != null) {
+			images.remove(image);
+		}
+
 	}
 
 	@Override

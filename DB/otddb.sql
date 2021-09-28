@@ -69,7 +69,7 @@ DROP TABLE IF EXISTS `activity` ;
 CREATE TABLE IF NOT EXISTS `activity` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(100) NOT NULL,
-  `pro_tips` TEXT NOT NULL,
+  `pro_tips` TEXT NULL,
   `elevation_gain_feet` INT NULL,
   `route` VARCHAR(45) NULL,
   `handicap_accessible` TINYINT NULL,
@@ -80,6 +80,7 @@ CREATE TABLE IF NOT EXISTS `activity` (
   `category_id` INT NOT NULL,
   `location_id` INT NOT NULL,
   `difficulty` INT NOT NULL,
+  `distance_miles` DOUBLE NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_activity_category1_idx` (`category_id` ASC),
   INDEX `fk_activity_location1_idx` (`location_id` ASC),
@@ -216,6 +217,10 @@ COMMIT;
 START TRANSACTION;
 USE `otddb`;
 INSERT INTO `location` (`id`, `street`, `city`, `state`, `zip_code`, `latitude`, `longitude`) VALUES (1, NULL, 'Denver', 'CO', '80212', NULL, NULL);
+INSERT INTO `location` (`id`, `street`, `city`, `state`, `zip_code`, `latitude`, `longitude`) VALUES (2, NULL, 'Golden', 'CO', NULL, NULL, NULL);
+INSERT INTO `location` (`id`, `street`, `city`, `state`, `zip_code`, `latitude`, `longitude`) VALUES (3, NULL, 'Aurora', 'CO', NULL, NULL, NULL);
+INSERT INTO `location` (`id`, `street`, `city`, `state`, `zip_code`, `latitude`, `longitude`) VALUES (4, NULL, 'Boulder', 'CO', NULL, NULL, NULL);
+INSERT INTO `location` (`id`, `street`, `city`, `state`, `zip_code`, `latitude`, `longitude`) VALUES (5, NULL, 'Aurora', 'CO', NULL, NULL, NULL);
 
 COMMIT;
 
@@ -225,7 +230,11 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `otddb`;
-INSERT INTO `activity` (`id`, `title`, `pro_tips`, `elevation_gain_feet`, `route`, `handicap_accessible`, `dogs_allowed`, `parking`, `description`, `profile_url`, `category_id`, `location_id`, `difficulty`) VALUES (1, 'Sloan\'s Lake Loop', 'The lake is closed for kayaks and water activities due to dangerous levels of blue algae. Keep your dogs away from the water.', 13, 'Loop', 1, 1, 1, 'This easy, family-friendly stroll goes around the lake in Sloan\'s Lake Park. Accessibility: There are 2 designated accessible spaces in the small paved parking lot off of West Byron Place at the northwest end of the trail. Both of them are van-accessible with a striped access aisle. The trail surface is paved (with railings at bridges) and smooth. It is typically at least 4 to 6 feet wide (with some wider passing spaces). There is a painted dividing line along the trail which reduces the width.  The entire trail is estimated to be in the flat grade category (1% or less). This trail will likely be navigable for most wheelchairs/mobility equipment or stroller users. There are benches and picnic tables along the route for resting. There are wheelchair-accessible bathrooms along the trail.', 'https://cdn-assets.alltrails.com/uploads/photo/image/27257608/extra_large_05f6ac6a01e9df8c6ce7520521a7325d.jpg', 1, 1, 1);
+INSERT INTO `activity` (`id`, `title`, `pro_tips`, `elevation_gain_feet`, `route`, `handicap_accessible`, `dogs_allowed`, `parking`, `description`, `profile_url`, `category_id`, `location_id`, `difficulty`, `distance_miles`) VALUES (1, 'Sloan\'s Lake Loop', 'The lake is closed for kayaks and water activities due to dangerous levels of blue algae. Keep your dogs away from the water.', 13, 'Loop', 1, 1, 1, 'This easy, family-friendly stroll goes around the lake in Sloan\'s Lake Park. Accessibility: There are 2 designated accessible spaces in the small paved parking lot off of West Byron Place at the northwest end of the trail. Both of them are van-accessible with a striped access aisle. The trail surface is paved (with railings at bridges) and smooth. It is typically at least 4 to 6 feet wide (with some wider passing spaces). There is a painted dividing line along the trail which reduces the width.  The entire trail is estimated to be in the flat grade category (1% or less). This trail will likely be navigable for most wheelchairs/mobility equipment or stroller users. There are benches and picnic tables along the route for resting. There are wheelchair-accessible bathrooms along the trail.', 'https://cdn-assets.alltrails.com/uploads/photo/image/27257608/extra_large_05f6ac6a01e9df8c6ce7520521a7325d.jpg', 1, 1, 1, 2.6);
+INSERT INTO `activity` (`id`, `title`, `pro_tips`, `elevation_gain_feet`, `route`, `handicap_accessible`, `dogs_allowed`, `parking`, `description`, `profile_url`, `category_id`, `location_id`, `difficulty`, `distance_miles`) VALUES (2, 'Clear Creek Trail', 'Platte River Trail north of I-76 (Welby) and Clear Creek Canyon Rd./US 6 west of 6th Ave. (Golden)', 223, 'Asphalt, Concrete, Crushed Stone, Dirt', 1, 1, 1, 'The Clear Creek Trail runs more than 20 miles from metro Denver, through Wheat Ridge, to Golden along a picturesque creek with views of the North and South Table Mountains. A highlight of the trail is the legendary Coors Brewing Company on the path\'s western end; factory tours are available. In Golden, the trail runs right along the river and travelers will see families tubing down the river and fly fishermen along its banks. The trail is paved downtown, but becomes crushed stone and more tree-lined as you head west out of town. Numerous pedestrian bridges dot the route, allowing trail users easy access to both sides of Clear Creek, and interpretative panels along the way share the region\'s history.', 'https://cloudfront.traillink.com/photos/clear-creek-trail-(co)_174777_sc.jpg', 2, 2, 1, 21.8);
+INSERT INTO `activity` (`id`, `title`, `pro_tips`, `elevation_gain_feet`, `route`, `handicap_accessible`, `dogs_allowed`, `parking`, `description`, `profile_url`, `category_id`, `location_id`, `difficulty`, `distance_miles`) VALUES (3, 'Cherry Creek Reservoir', 'Cherry Creek State Park charges a fee to enter. Entrance fees are per vehicle. An annual pass is also available.', 147, 'Loop', 1, 2, 1, 'Cherry Creek Reservoir Loop Trail is a 6.7 mile heavily trafficked loop trail located near Centennial, Colorado that features a lake and is good for all skill levels. The trail offers a number of activity options and is accessible year-round. Dogs are also able to use this trail but must be kept on leash.', 'https://cdn-assets.alltrails.com/uploads/photo/image/39585202/extra_large_afb6936fff226e402b15e57468f8d1d0.jpg', 3, 3, 1, 6.7);
+INSERT INTO `activity` (`id`, `title`, `pro_tips`, `elevation_gain_feet`, `route`, `handicap_accessible`, `dogs_allowed`, `parking`, `description`, `profile_url`, `category_id`, `location_id`, `difficulty`, `distance_miles`) VALUES (4, 'Gross Reservoir Paddle Route', NULL, 75, 'Loop', 2, 2, 1, 'Gross Reservoir Paddle Route is a 7 mile lightly trafficked loop trail located near Golden, Colorado that features a lake. The trail is good for all skill levels.', 'https://cdn-assets.alltrails.com/uploads/photo/image/14581982/extra_large_c2958673933db1e990f00b89b04d9c34.jpg', 4, 4, 1, 7);
+INSERT INTO `activity` (`id`, `title`, `pro_tips`, `elevation_gain_feet`, `route`, `handicap_accessible`, `dogs_allowed`, `parking`, `description`, `profile_url`, `category_id`, `location_id`, `difficulty`, `distance_miles`) VALUES (5, 'Aurora Reservoir', 'Parks pass required;\nDay Pass, $10\nAnnual Pass, Non-Resident  $65\nAnnual Pass, Aurora Resident  $55\nAnnual Pass, Non-Resident Senior, 62+  $55\nAnnual Pass, Aurora Resident Senior, 62+  $45\nAdditional Vehicle Pass,  $30\n\nFees are charged per vehicle in most cases.\nPasses are valid at both Aurora and Quincy Reservoirs.', 137, 'Clearing', 1, 1, 1, 'Aurora Reservoir is a 8 mile loop trail located near Aurora, Colorado that features a lake and is good for all skill levels. The trail is primarily used for walking, fishing, and road biking. Dogs are also able to use this trail but must be kept on leash.', 'https://cdn-assets.alltrails.com/uploads/photo/image/38546872/extra_large_cf3ef2cfce7e92bcf22dc80ff2595ae6.jpg', 5, 5, 1, 8);
 
 COMMIT;
 

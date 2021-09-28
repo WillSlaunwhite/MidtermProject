@@ -5,6 +5,13 @@
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     
     <class>com.skilldistillery.otd.entities.User</class>
+    <class>com.skilldistillery.otd.entities.Location</class>
+    <class>com.skilldistillery.otd.entities.Comment</class>
+    <class>com.skilldistillery.otd.entities.Rating</class>
+    <class>com.skilldistillery.otd.entities.Activity</class>
+    <class>com.skilldistillery.otd.entities.Category</class>
+    <class>com.skilldistillery.otd.entities.Image</class>
+    <class>com.skilldistillery.otd.entities.RatingId</class>
 
     <properties>
       <property name="javax.persistence.jdbc.url" 
