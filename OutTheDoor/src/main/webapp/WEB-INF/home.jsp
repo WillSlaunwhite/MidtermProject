@@ -30,7 +30,7 @@ background-repeat: no-repeat; background-size: cover; }
   <input type="text" placeholder="search by keyword or zip code" name="search">
   <button type="submit"><i class="fa fa-search"></i></button>
 </form>
-
+<a href ="getAllHiking.do">Get Hikes</a>
 
 
 
