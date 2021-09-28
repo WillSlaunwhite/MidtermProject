@@ -13,20 +13,15 @@
 <jsp:include page="/WEB-INF/header.jsp"></jsp:include>
 </head>
 <body>
-
-<%-- <c:forEach items="${results}" var="attribute" varStatus="status">
-    <c:set var="attribute" value="${activity}" scope="request"/>
-</c:forEach>
-<c:import url="activity.jsp"/> --%>
 <!-- <main class="container"></main> -->
 <div class="container">
 	<div class="row">
-		<c:forEach var = "h" items = "${results }" >
+		<c:forEach var = "b" items = "${results }" >
 			<div class="col-sm-4">
-            	<p class="card-text"><h3>${h.title }</h3>
-                <a href="getActivity.do?id=${h.id }"><img class="card-img-top" src="${h.profileURL}" style="width:150px;height:120px;" alt="Responsive image"></a>
+            	<p class="card-text"><h3>${b.title }</h3>
+                <img class="card-img-top" src="${b.profileURL}" style="width:150px;height:120px;" alt="Responsive image">
              	<div class="card-body">
-             	<p class="card-text">City: ${h.location.city}<br>State: ${h.location.state}<br>Trail Length: ${h.distanceInMiles}<br>Difficulty: ${h.difficulty}</p>
+             	<p class="card-text">City: ${b.location.city}<br>State: ${b.location.state}<br>Trail Length: ${b.distanceInMiles}<br>Difficulty: ${b.difficulty}</p>
  	           	</div>
               </div>
 		</c:forEach>

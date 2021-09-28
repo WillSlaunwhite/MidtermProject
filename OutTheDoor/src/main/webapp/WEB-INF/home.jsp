@@ -32,10 +32,13 @@ background-repeat: no-repeat; background-size: cover; }
   <button type="submit"><i class="fa fa-search"></i></button>
 </form>
 <a href ="getAllHiking.do">Get Hikes</a>
+<a href ="getAllBiking.do">Get Biking</a>
+<a href ="getAllKayaking.do">Get Kayaking</a>
+<a href ="getAllRafting.do">Get Rafting</a>
+<a href ="getAllFishing.do">Get Fishing</a>
 
 
 
-${DEBUG}
 
 </body>
 </html>

@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+a {
+	color: white;
+}
+
 form.example input[type=text] {
   border-radius: 100px;
   padding: 25px;
