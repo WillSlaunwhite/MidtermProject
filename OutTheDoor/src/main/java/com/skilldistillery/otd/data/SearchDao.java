@@ -12,6 +12,7 @@ public interface SearchDao {
 	List<Activity> findAllFishing();
 	Activity findActivityById(int id);
 	Activity findActivityByCategory();
+	List<Activity> findActivityByKeyword(String keyword);
 	
 	
 }

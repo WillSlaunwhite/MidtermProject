@@ -1,6 +1,9 @@
 package com.skilldistillery.otd.controllers;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -68,4 +71,12 @@ public class HomeController {
 		return "activity";
 	}
 	
-}
+	@RequestMapping(path = "findActivityByKW.do")
+	public String findActivityByKW(@RequestParam("search")String keywordSearch, Model model, HttpSession session) {
+			List<Activity> activities = searchDao.findActivityByKeyword(keywordSearch);
+			model.addAttribute("keywordSearch", activities);
+			return "searchResults";
+	}
+		
+	}
+
