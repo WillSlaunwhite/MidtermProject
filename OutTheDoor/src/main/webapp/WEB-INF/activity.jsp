@@ -13,6 +13,7 @@
 </head>
 
 <!-- Update and Delete Buttons -->
+
 <form action="/getUpdate.do?id=${activity.id}">
 <p align="right">
   <button class="update" type="submit"><i class="fa fa-bars"></i> Update</button></p>
