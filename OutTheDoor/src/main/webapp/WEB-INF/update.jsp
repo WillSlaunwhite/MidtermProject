@@ -7,6 +7,8 @@
 <title>Update</title>
 </head>
 <body>
+${activity.title}
+
 
 </body>
 </html>
