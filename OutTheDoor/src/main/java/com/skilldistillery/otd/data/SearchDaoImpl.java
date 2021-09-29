@@ -1,5 +1,6 @@
 package com.skilldistillery.otd.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -84,4 +85,20 @@ public class SearchDaoImpl implements SearchDao{
 		Activity a = em.find(Activity.class, 1);
 		return a;
 	}
+
+	@Override
+	public List<Activity> findActivityByKeyword(String keyword) {
+		
+
+			String jpql = "SELECT a from Activity a WHERE a.title LIKE :keyword OR a.description LIKE :keyword";
+			List<Activity> results = em.createQuery(jpql, Activity.class).setParameter("keyword", "%" + keyword + "%")
+					.getResultList();
+			List<Activity> list = new ArrayList<>();
+
+			results.stream().forEach(x -> list.add((Activity) x));
+
+			return list;
+		}
+	
+	
 }
