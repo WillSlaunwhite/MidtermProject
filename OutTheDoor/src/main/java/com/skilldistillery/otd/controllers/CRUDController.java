@@ -19,7 +19,7 @@ public class CRUDController {
 	@Autowired
 	private SearchDao searchDao;
 	
-	@RequestMapping(path ="getUpdate.do", method=RequestMethod.GET)
+	@RequestMapping(path ="getUpdate.do", method= RequestMethod.GET)
 		public String populateUpdateForm(@RequestParam("id") int id, Model model) {
 			model.addAttribute("activity", searchDao.findActivityById(id));
 			return "updateForm";
