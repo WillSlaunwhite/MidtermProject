@@ -19,7 +19,7 @@
 		<c:forEach var = "b" items = "${results }" >
 			<div class="col-sm-4">
             	<p class="card-text"><h3>${b.title }</h3>
-                <img class="card-img-top" src="${b.profileURL}" style="width:150px;height:120px;" alt="Responsive image">
+                <a href="getActivity.do?id=${b.id }"><img class="card-img-top" src="${b.profileURL}" style="width:150px;height:120px;" alt="Responsive image"></a>
              	<div class="card-body">
              	<p class="card-text">City: ${b.location.city}<br>State: ${b.location.state}<br>Trail Length: ${b.distanceInMiles}<br>Difficulty: ${b.difficulty}</p>
  	           	</div>
