@@ -24,15 +24,15 @@
 </form>
 
 <body>
-<h1 style="font-family:didot, serif; font-size:50px; text-align:left; color:black; font-variant: small-caps">${activity.title }</h1>
+<h1 style="font-family:didot, serif; font-size:50px; text-align:center; color:black; font-variant: small-caps">${activity.title }</h1>
 
 
-<div class="container">
+<div class="container" style="font-family:didot, serif;">
   <div class="row">
     <div class="col">
       <img src="${activity.profileURL}"> 
     </div>
-    <div class="col bg-secondary">
+    <div class="col bg-success">
       ${activity.description}
     </div>
   </div>
@@ -49,7 +49,7 @@
   </div>
 </div>
 
-<div class="container bg-secondary">
+<div class="container bg-success" style="font-family:didot, serif;">
 	<p>
 		Pro Tips: ${activity.proTips}
 	</p>
