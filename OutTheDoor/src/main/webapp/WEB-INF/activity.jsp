@@ -13,15 +13,17 @@
 </head>
 
 <!-- Update and Delete Buttons -->
-<form class="update" action="/getUpdate.do">
-  <button type="submit"><i class="fa fa-bars"></i> Update</button>
-</form>
-<form class="delete" action="/getDelete.do">
-  <button type="submit"><i class="fa fa-trash"></i> Delete</button>
+<form action="/getUpdate.do?id=${activity.id}">
+<p align="right">
+  <button class="update" type="submit"><i class="fa fa-bars"></i> Update</button></p>
+  </form>
+  <form action="/getDelete.do">
+  <p align="right">
+  <button class="delete" type="submit"><i class="fa fa-trash"></i> Delete</button></p>
 </form>
 
 <body>
-<h1>${activity.title }</h1>
+<h1 style="font-family:didot, serif; font-size:50px; text-align:left; color:black; font-variant: small-caps">${activity.title }</h1>
 
 
 <div class="container">
