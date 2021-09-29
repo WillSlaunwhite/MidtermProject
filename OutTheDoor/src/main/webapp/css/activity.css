@@ -1,0 +1,17 @@
+body{
+background-image: url('https://live.staticflickr.com/65535/51532152453_db0cdbcc5f_z.jpg');
+background-repeat: no-repeat; background-size: cover;
+} 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+h1 {
+	font-family:didot, serif; 
+	font-size:50px; 
+	text-align:left; 
+	color:black; 
+	font-variant: small-caps;
+}
