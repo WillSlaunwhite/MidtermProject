@@ -16,37 +16,23 @@ h1 {
 	font-variant: small-caps;
 }
 /* Update and Delete Buttons */
-
-update {
-  background-color: #000000;
+.update {
   font-family: didot, serif;
-  border: none;
-  font-color: white;
-  padding: 12px 16px;
-  font-size: 16px;
-  cursor: pointer;
-  position:absolute; 
-  top:0; 
-  right:0;
-}
-
-./* update:hover {
-  background-color: #7E7E7E;
-} */
-
-delete {
-  background-color: #000000;
-  font-family: didot, serif;
-  border: none;
+  background-color: black;
   color: white;
-  padding: 12px 16px;
+  border: none;
+  margin-top: 10px;
+  margin-right: 10px;
   font-size: 16px;
   cursor: pointer;
-  position:absolute; 
-  top:0; 
-  right:0;
 }
 
-/* .delete:hover {
-  background-color: #7E7E7E;
-} */
+.delete {
+  font-family: didot, serif;
+  background-color: black;
+  color: white;
+  border: none;
+  margin-right: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}

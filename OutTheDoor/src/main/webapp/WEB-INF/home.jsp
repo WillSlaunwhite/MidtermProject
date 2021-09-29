@@ -28,7 +28,7 @@ background-repeat: no-repeat; background-size: cover; }
 <!--  Search Bar and Button -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<form class="example" action="/action_page.php">
+<form class="example" action="findActivityByKW.do">
   <input type="text" placeholder="search by keyword or zip code" name="search">
   <button type="submit"><i class="fa fa-search"></i></button>
 </form>
