@@ -9,20 +9,20 @@ a {
 }
 
 form.example input[type=text] {
-  border-radius: 100px;
-  padding: 25px;
+ /*  border-radius: 100px; */
+  padding: 15px;
   font-size: 17px;
   border: 1px solid black;
   float: left;
   width: 80%;
   background: #ffffff;
-
 }
+
 form.example button {
-  border-radius: 25px;
+ /* border-radius: 100px; */
   float: left;
   width: 20%;
-  padding: 25px;
+  padding: 15px;
   background: #000000;
   color: white;
   font-size: 17px;
@@ -32,11 +32,18 @@ form.example button {
 }
 
 form.example button:hover {
-  background: #12E1B9;
+  background: #363320;
 }
 
 form.example::after {
   content: "";
   clear: both;
   display: table;
+}
+
+div.categories {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
