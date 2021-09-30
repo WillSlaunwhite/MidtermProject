@@ -26,6 +26,10 @@
 <p align="right">
   <button class="favorites" type="submit"><i class="fa fa-star"></i> Add to Favorites</button></p>
   </form>
+  <form action="/removeFavorites.do">
+<p align="right">
+  <button class="remove" type="submit"><i class="fa fa-star"></i> Remove Favorite</button></p>
+  </form>
 
 <body>
 <h1 style="font-family:didot, serif; font-size:50px; text-align:center; color:black; font-variant: small-caps">${activity.title }</h1>
