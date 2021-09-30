@@ -9,6 +9,7 @@
 <title>Create New Activity</title>
 </head>
 <body>
+<h1>${location.id }</h1>
 <div class="mx-auto" style="width:100%;">
 <div class="container">
 <p><h3 style="align:center;">Welcome to the Create New Activity Page!</h3></p>
@@ -44,7 +45,7 @@ Just fill out the form below for a new activity and we'll add it to the database
 <div class="form-row"> 
 <label for="profileURL"> Enter an image URL for the Activity:</label><input type="text" name="profileURL"/>
 </div>
-<div class="form-group">
+<di	v class="form-group">
 		<div class="form-row">
 		<label for="customer-control customer radio">Are Dogs/Pets Allowed?<span style="padding-right:15px;"></span> </label>
 		<div class="customer-control custom radio">
@@ -58,14 +59,8 @@ Just fill out the form below for a new activity and we'll add it to the database
 		</div>
 		</div>
 		</div>
+			<input type="submit" value="Add Location" />
 		
-<h3>Now Lets Get Some Location Info:</h3>
-<div class="form-group">
-		<!-- <div class="form-row"> -->
-		<label for="street">City: </label> <input type="text" name="city"/> 
-		<label for="state">State (ex: CO or TX):</label> <input type="text" name="state"/> 
-		<label for="zipCode">Zip Code:</label> <input type="number" name="zipCode"/> 
-		</div><!-- </div> -->
 </form>
 </div>
 </div>

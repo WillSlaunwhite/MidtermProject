@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.skilldistillery.otd.data.CRUDDao;
 import com.skilldistillery.otd.data.SearchDao;
 import com.skilldistillery.otd.entities.Activity;
+import com.skilldistillery.otd.entities.Location;
 
 @Controller
 public class CRUDController {
@@ -36,19 +37,20 @@ public class CRUDController {
 	}
 	@RequestMapping(path="getAdd.do")
 	public String createNewActivity() {
-		return "newActivity";
+		return "newLocation";
 	}
 	@RequestMapping(path="addLocation.do")
-	public String addLocation(Location location) {
-		crudDao.addLocation(location);
-		
+	public ModelAndView addLocation(Location location) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("location", location);
+		mv.setViewName("newActivity");
+		return mv;
 	}
 	
 	
 	
 	@RequestMapping(path="addActivity.do", method=RequestMethod.POST)
 	public ModelAndView addActivity(Activity activity) {
-		crudDao.addLocation(activity);
 		ModelAndView mv = new ModelAndView();
 		crudDao.addActivity(activity);
 		mv.addObject("activity", activity);
