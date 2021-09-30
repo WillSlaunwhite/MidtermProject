@@ -15,6 +15,29 @@
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-light " style="font-family:didot, serif; background-color:#9a8a8a;">
+  <a class="navbar-brand" href="home.do">OutTheDoor</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="home.do">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="getAllHiking.do">Hiking</a>
+      <a class="nav-item nav-link active" href="getAllBiking.do">Biking</a>
+      <a class="nav-item nav-link active" href="getAllRafting.do">Rafting</a>
+      <a class="nav-item nav-link active" href="getAllKayaking.do">Kayaking</a>
+      <a class="nav-item nav-link active" href="getAllFishing.do">Fishing</a>
+    </div>
+  </div>
+</nav>
+<!-- Add Button -->
+<form action="/getAdd.do">
+<p align="right">
+<input type="hidden" name="id" value="${activity.id }">
+  <button class="add" type="submit"><i class="fa fa-bars"></i> Add</button></p>
+  </form>
+
 <h1 style="font-family:didot, serif; font-size:75px; text-align:center; color:black; font-variant: small-caps">Fishing</h1>
 
 <!-- <main class="container"></main> -->

@@ -1,8 +1,20 @@
 @charset "UTF-8";
+
 .container{
 	font-family: didot, serif;
 }
 body {
   background-image: url('https://live.staticflickr.com/65535/51534838877_6abb0954ef_z.jpg');
 background-repeat: no-repeat; background-size: cover; 
+}
+/* Add Button */
+.add {
+  font-family: didot, serif;
+  background-color: black;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  cursor: pointer;
 }
