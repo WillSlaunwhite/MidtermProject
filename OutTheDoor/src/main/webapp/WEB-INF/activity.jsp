@@ -32,7 +32,7 @@
     <div class="col">
       <img src="${activity.profileURL}"> 
     </div>
-    <div class="col bg-success">
+    <div class="col bg-light">
       ${activity.description}
     </div>
   </div>
@@ -49,7 +49,7 @@
   </div>
 </div>
 
-<div class="container bg-success" style="font-family:didot, serif;">
+<div class="container bg-light" style="font-family:didot, serif;">
 	<p>
 		Pro Tips: ${activity.proTips}
 	</p>
