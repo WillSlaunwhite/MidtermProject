@@ -1,0 +1,8 @@
+@charset "UTF-8";
+.container{
+	font-family: didot, serif;
+}
+body {
+  background-image: url('https://live.staticflickr.com/65535/51535489031_536fd9ced1_z.jpg');
+background-repeat: no-repeat; background-size: cover; 
+}
