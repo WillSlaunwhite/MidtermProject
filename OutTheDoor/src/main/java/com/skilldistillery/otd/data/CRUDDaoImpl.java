@@ -17,6 +17,19 @@ public class CRUDDaoImpl implements CRUDDao {
 	@Override
 	public void updateActivity(Activity activity, int id) {
 		
+			Activity updated = em.find(Activity.class, id);
+			if (activity.getTitle() != null) {
+				updated.setTitle(activity.getTitle());
+			}
+			if(activity.getDescription()!=null) {
+				updated.setDescription(activity.getDescription());
+			}
+			if(activity.getDifficulty()!=0){
+				updated.setDifficulty(activity.getDifficulty());
+			}
+			
+			
+			
 	}
 
 	@Override

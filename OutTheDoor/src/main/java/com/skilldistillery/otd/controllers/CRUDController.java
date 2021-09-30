@@ -26,17 +26,16 @@ public class CRUDController {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
+	@RequestMapping(path="update.do", method=RequestMethod.POST)
 	public ModelAndView updateActivity(Activity activity) { 
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("activity", activity);
 		crudDao.updateActivity(activity, activity.getId());
-		mv.setViewName("update");
+		mv.setViewName("activity");
 		return mv;
+	}
+	@RequestMapping(path="getAdd.do", method=RequestMethod.POST)
+	public String createNewActivity() {
+		return "newActivity";
 	}
 }
