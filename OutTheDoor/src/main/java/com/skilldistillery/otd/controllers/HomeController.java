@@ -24,7 +24,7 @@ public class HomeController {
 	private SearchDao searchDao;
 
 	
-	@RequestMapping(path = {"/", "home.do"} )
+	@RequestMapping(path = {"home.do"} )
 	public String home(Model model) { 
 		model.addAttribute("DEBUG", userDao.findByUsername("admin"));
 		return "home";
@@ -78,5 +78,5 @@ public class HomeController {
 			return "searchResults";
 	}
 		
-	}
+}
 
