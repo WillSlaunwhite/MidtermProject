@@ -4,4 +4,5 @@ import com.skilldistillery.otd.entities.User;
 
 public interface UserDao {
 	User findByUsername(String username);
+	User createUser(User user);
 }

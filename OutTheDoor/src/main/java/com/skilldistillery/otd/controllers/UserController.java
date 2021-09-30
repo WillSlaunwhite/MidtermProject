@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.skilldistillery.otd.data.UserDao;
 
 @Controller
-public class LoginController {
+public class UserController {
 	@Autowired
 	private UserDao userDao;
 	
@@ -17,7 +17,7 @@ public class LoginController {
 		return "login";
 	}
 	
-	@RequestMapping(path="createUser.do")
+	@RequestMapping(path="createUserWebpage.do")
 	public String createUser() {
 		return "createUser";
 	}
@@ -31,4 +31,6 @@ public class LoginController {
 		}
 		
 	}
+	
+	
 }
