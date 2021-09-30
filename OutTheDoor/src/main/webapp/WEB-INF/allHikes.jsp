@@ -27,6 +27,8 @@
       <a class="nav-item nav-link active" href="getAllRafting.do">Rafting</a>
       <a class="nav-item nav-link active" href="getAllKayaking.do">Kayaking</a>
       <a class="nav-item nav-link active" href="getAllFishing.do">Fishing</a>
+      <a class="nav-item nav-link active" href="getAllFavorites.do">Favorites</a>
+      
     </div>
   </div>
 </nav>
