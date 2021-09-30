@@ -16,9 +16,9 @@
 		Activity ID: ${activity.id}<br>
 		Title: 	 <input type="text" name="name" value="${activity.title}"/> <br>
 		Location:
-		City: <input type="text" name="location" value="${activity.city}"/> <br>
+		<%-- City: <input type="text" name="location" value="${activity.city}"/> <br>
 		State: <input type="text" name="location" value="${activity.state }"/> <br>
-		
+		 --%>
 	
 	<input type="submit" value="Update Activity" />
 	</div>
