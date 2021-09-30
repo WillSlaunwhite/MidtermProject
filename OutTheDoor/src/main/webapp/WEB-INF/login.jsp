@@ -15,13 +15,13 @@
       <h1 class="h3 mb-3 font-weight-light" style="color:white; text-align:center">Please sign in</h1>
       
       <label for="username" class="sr-only">Email address</label>
-      <input name="username" type="text" id="inputUser" class="form-control" placeholder="Username">
+      <input name="username" type="text" id="username" class="form-control" placeholder="Username">
       
       <label for="password" class="sr-only">Password</label>
       <input name="password" type="password" id="password" class="form-control" placeholder="Password">
       <div class="checkbox mb-3 text-center" style="color:white">
         <label>
-          <a style="color:white;" href="createUser.do">Create Account</a>
+          <a style="color:white;" href="createUserWebpage.do">Create Account</a>
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
