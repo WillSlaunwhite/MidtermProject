@@ -1,0 +1,27 @@
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  background-image: url('https://wallpaperaccess.com/full/622264.jpg');
+  background-repeat: no-repat;
+  background-size: cover;
+}
+
+form {
+	background-color: 255E2C;
+	padding-top: 15px;
+	padding-bottom: 45px;
+	width: 50%;
+}
+
+.card {
+	opacity: 87.5%;
+}
