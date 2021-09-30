@@ -15,6 +15,16 @@
 </head>
 <body>
 
+<!-- Add Button -->
+<form action="/getAdd.do">
+<p align="right">
+<input type="hidden" name="id" value="${activity.id }">
+  <button class="add" type="submit"><i class="fa fa-bars"></i> Add</button></p>
+  </form>
+  
+<h1 style="font-family:didot, serif; font-size:75px; text-align:center; color:black; font-variant: small-caps">Hiking</h1>
+
+
 <%-- <c:forEach items="${results}" var="attribute" varStatus="status">
     <c:set var="attribute" value="${activity}" scope="request"/>
 </c:forEach>
