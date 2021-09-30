@@ -38,4 +38,12 @@ public class CRUDController {
 	public String createNewActivity() {
 		return "newActivity";
 	}
+	@RequestMapping(path="addActivity.do", method=RequestMethod.POST)
+	public ModelAndView addActivity(Activity activity) {
+		ModelAndView mv = new ModelAndView();
+		crudDao.addActivity(activity);
+		mv.addObject("activity", activity);
+		mv.setViewName("activity");
+		return mv;
+	}
 }
