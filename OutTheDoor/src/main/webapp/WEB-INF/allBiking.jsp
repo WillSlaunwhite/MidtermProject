@@ -14,6 +14,9 @@
 <jsp:include page="/WEB-INF/header.jsp"></jsp:include>
 </head>
 <body>
+
+<h1 style="font-family:didot, serif; font-size:75px; text-align:center; color:black; font-variant: small-caps">Biking</h1>
+
 <!-- <main class="container"></main> -->
 <div class="container">
 	<div class="row">

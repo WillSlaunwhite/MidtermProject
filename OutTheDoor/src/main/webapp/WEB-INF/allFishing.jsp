@@ -14,6 +14,7 @@
 <jsp:include page="/WEB-INF/header.jsp"></jsp:include>
 </head>
 <body>
+
 <nav class="navbar navbar-custom">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,6 +29,9 @@
     </div>
   </div>
 </nav>
+
+<h1 style="font-family:didot, serif; font-size:75px; text-align:center; color:black; font-variant: small-caps">Fishing</h1>
+
 <!-- <main class="container"></main> -->
 <div class="container">
 	<div class="row">
