@@ -34,7 +34,7 @@ public class CRUDController {
 		mv.setViewName("activity");
 		return mv;
 	}
-	@RequestMapping(path="getAdd.do", method=RequestMethod.POST)
+	@RequestMapping(path="getAdd.do")
 	public String createNewActivity() {
 		return "newActivity";
 	}
