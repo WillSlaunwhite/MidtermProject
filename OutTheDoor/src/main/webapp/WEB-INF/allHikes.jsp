@@ -14,6 +14,25 @@
 <jsp:include page="/WEB-INF/header.jsp"></jsp:include>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light " style="font-family:didot, serif; background-color:#9a8a8a;">
+  <a class="navbar-brand" href="home.do">OutTheDoor</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="home.do">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="getAllHiking.do">Hiking</a>
+      <a class="nav-item nav-link active" href="getAllBiking.do">Biking</a>
+      <a class="nav-item nav-link active" href="getAllRafting.do">Rafting</a>
+      <a class="nav-item nav-link active" href="getAllKayaking.do">Kayaking</a>
+      <a class="nav-item nav-link active" href="getAllFishing.do">Fishing</a>
+      <a class="nav-item nav-link active" href="getAllFavorites.do">Favorites</a>
+      
+    </div>
+  </div>
+</nav>
+
 
 <!-- Add Button -->
 <form action="/getAdd.do">

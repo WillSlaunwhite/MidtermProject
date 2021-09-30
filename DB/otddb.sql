@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `activity` (
   `description` TEXT NOT NULL,
   `profile_url` VARCHAR(1000) NULL,
   `category_id` INT NOT NULL,
-  `location_id` INT NOT NULL,
+  `location_id` INT NULL,
   `difficulty` INT NOT NULL,
   `distance_miles` DOUBLE NOT NULL,
   PRIMARY KEY (`id`),
