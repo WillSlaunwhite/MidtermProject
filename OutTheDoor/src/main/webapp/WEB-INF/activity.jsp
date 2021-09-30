@@ -13,17 +13,17 @@
 </head>
 
 <!-- Update, Delete, Favorites Buttons -->
-<form action="/getUpdate.do?id=${activity.id}">
+
+<body>
+<form action="getUpdate.do?id=${activity.id}">
 <p align="right">
 <input type="hidden" name="id" value="${activity.id }">
   <button class="update" type="submit"><i class="fa fa-bars"></i> Update</button></p>
   </form>
-  <form action="/getDelete.do">
+  <form action="getDelete.do">
   <p align="right">
   <button class="delete" type="submit"><i class="fa fa-trash"></i> Delete</button></p>
-
-
-<body>
+</form>
 <h1 style="font-family:didot, serif; font-size:50px; text-align:center; color:black; font-variant: small-caps">${activity.title }</h1>
 
 
