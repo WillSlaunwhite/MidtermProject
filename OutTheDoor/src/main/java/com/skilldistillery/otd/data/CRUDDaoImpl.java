@@ -1,5 +1,7 @@
 package com.skilldistillery.otd.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -7,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.otd.entities.Activity;
+import com.skilldistillery.otd.entities.Location;
 
 @Service
 @Transactional
@@ -30,10 +33,28 @@ public class CRUDDaoImpl implements CRUDDao {
 			
 			
 			
+			
 	}
-
+	@Override
+	public int addLocation(Location location) {
+		String jpql = "SELECT l.id from Location l where l.zip_code = :zip";
+		List<Location> locs = em.createQuery(jpql, Location.class).setParameter("zip", 
+				location.getZipCode()).getResultList();
+		if(locs.size() == 0) {
+			em.persist(location);
+			em.flush();
+			String jpql = "UPDATE activity "
+		}
+		
+		return 0;
+		
+	}	
 	@Override
 	public Activity addActivity(Activity activity) {
+		
+		
+		
+		
 		em.persist(activity);
 		em.flush();
 		return activity;

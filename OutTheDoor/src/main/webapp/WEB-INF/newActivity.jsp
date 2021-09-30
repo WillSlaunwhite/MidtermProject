@@ -9,30 +9,70 @@
 <title>Create New Activity</title>
 </head>
 <body>
-<div class="container bg-light">
+<div class="mx-auto" style="width:100%;">
 <div class="container">
 <p><h3 style="align:center;">Welcome to the Create New Activity Page!</h3></p>
 Just fill out the form below for a new activity and we'll add it to the database!
 </div>
-<div class="container bg-secondary">
-<form>
-<label> <input type="text" name="title"/>Activity Title:</label> 
-<label> <textarea class="form-control" rows="5" name="description"/></textarea>Activity Description:</label> 
-<label> <input type="text" name="elevationGain"/> Elevation gain(feet)</label> 
-<label> <input type="text" name="route"/>Route type: (Out and back, loop, etc)</label> 
-<label> <input type="number"min="1" max="5" name="difficulty"/>Activity Difficulty: (1-5)</label> 
-<label> <input type="number" name="distanceInMiles"/>Activity Distance: (miles)</label> 
-<label> <textarea class="form-control" rows="5" name="proTips"/></textarea>Enter some helpful "Pro Tips" for your fellow adventure-seekers : </label> 
-<label> <input type="text" name="profileURL"/>Enter an image URL for the Activity</label> 
-
+<div class="container bg-secondary text-white">
+<form action="addActivity.do">
+<div class="form-row">
+<div class="col-sm-2">
+<label for="title">Activity Title:</label> <input type="text" name="title"/> 
+		<label for="sel1">Select Category</label>
+		<select class="form-control" id="category" name="category">
+		<option>Hiking</option>
+		<option>Biking</option>
+		<option>Kayaking</option>
+		<option>Rafting</option>
+		<option>Fishing</option>
+		</select>
+		</div>
+		</div>
+<div class="form-row">
+<label for="description">Activity Description:</label> <textarea class="form-control" rows="5" name="description"/></textarea>
+</div> 
+<div class="form-row">
+<label for="elevationGain">Elevation gain(feet)</label><input type="text" name="elevationGain"/> 
+<label for="route"> Route type: (Out and back, loop, etc)</label>  <input type="text" name="route"/>
+<label for="difficulty">Activity Difficulty: (1-5)</label>  <input type="number"min="1" max="5" name="difficulty"/>
+<label for="distanceInMiles">Activity Distance: (miles)</label> <input type="number" name="distanceInMiles"/>
+</div>
+<div class="form-row"> 
+<label for="proTips">Enter some helpful "Pro Tips" for your fellow adventure-seekers: </label> <textarea class="form-control" rows="5" name="proTips"/></textarea> 
+</div>
+<div class="form-row"> 
+<label for="profileURL"> Enter an image URL for the Activity:</label><input type="text" name="profileURL"/>
+</div>
+<div class="form-group">
+		<div class="form-row">
+		<label for="customer-control customer radio">Are Dogs/Pets Allowed?<span style="padding-right:15px;"></span> </label>
+		<div class="customer-control custom radio">
+		<label><input type ="radio" name ="dogsAllowed" id="yes" value="yes">Yes</label>
+		<label><input type="radio" name="dogsAllowed" id="no" value="no">No</label><span style="padding-right:15px;"></span>
+		</div>
+		<div class="radio">	
+		<label for="customer-control customer radio">On-Site Parking Available?<span style="padding-right:15px;"></span></label>
+		<label class="radio-inline"> <input type ="radio" name="parking" value="yes">Yes</label>
+		<label class="radio-inline"><input type="radio" name="parking" value="no">No</label><span style="padding-right:15px;"></span>
+		</div>
+		</div>
+		</div>
+		
+<h3>Now Lets Get Some Location Info:</h3>
+<div class="form-group">
+		<!-- <div class="form-row"> -->
+		<label for="street">City: </label> <input type="text" name="city"/> 
+		<label for="state">State (ex: CO or TX):</label> <input type="text" name="state"/> 
+		<label for="zipCode">Zip Code:</label> <input type="number" name="zipCode"/> 
+		</div><!-- </div> -->
 </form>
 </div>
 </div>
 
 
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
