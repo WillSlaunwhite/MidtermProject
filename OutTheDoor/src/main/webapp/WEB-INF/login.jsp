@@ -12,15 +12,14 @@
 <body>
 <form class="form-signin" action="home.do">
 	  <h1 class="otd">OutTheDoor</h1>
-      <!-- <img class="mb-4" src="https://live.staticflickr.com/65535/51528525328_e954676f2d_k.jpg" alt=""> -->
-      <h1 class="h3 mb-3 font-weight-normal" style="color:white; text-align:center">Please sign in</h1>
+      <h1 class="h3 mb-3 font-weight-light" style="color:white; text-align:center">Please sign in</h1>
       <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Username">
+      <input type="email" id="inputUser" class="form-control" placeholder="Username">
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" class="form-control" placeholder="Password">
-      <div class="checkbox mb-3">
-        <label style="color:white">
-          <input type="checkbox" value="remember-me" style="color: white;"> Remember me
+      <div class="checkbox mb-3 text-center" style="color:white">
+        <label>
+          <a style="color:white;" href="createUser.do">Create Account</a>
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
