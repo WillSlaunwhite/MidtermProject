@@ -54,6 +54,7 @@ public class CRUDDaoImpl implements CRUDDao {
 		em.persist(activity);
 		em.flush();
 		return activity;
+		
 	}
 
 	@Override
