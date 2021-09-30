@@ -21,4 +21,14 @@ public class LoginController {
 	public String createUser() {
 		return "createUser";
 	}
+	
+	@RequestMapping(path="signIn.do")
+	public String signIn(Model model, String username, String password) {
+		if(userDao.findByUsername(username)!=null && userDao.findByUsername(username).getPassword().equals(password)) {
+			return "home";
+		} else {
+			return "error";
+		}
+		
+	}
 }
