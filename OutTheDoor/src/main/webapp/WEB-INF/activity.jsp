@@ -12,7 +12,7 @@
 <title>${activity.title }</title>
 </head>
 
-<!-- Update and Delete Buttons -->
+<!-- Update, Delete, Favorites Buttons -->
 <form action="/getUpdate.do?id=${activity.id}">
 <p align="right">
 <input type="hidden" name="id" value="${activity.id }">
@@ -22,6 +22,10 @@
   <p align="right">
   <button class="delete" type="submit"><i class="fa fa-trash"></i> Delete</button></p>
 </form>
+<form action="/getFavorites.do">
+<p align="right">
+  <button class="favorites" type="submit"><i class="fa fa-star"></i> Add to Favorites</button></p>
+  </form>
 
 <body>
 <h1 style="font-family:didot, serif; font-size:50px; text-align:center; color:black; font-variant: small-caps">${activity.title }</h1>
