@@ -34,13 +34,13 @@
 		<div class="form-row">
 		<label for="customer-control customer radio">Are Dogs/Pets Allowed?<span style="padding-right:15px;"></span> </label>
 		<div class="customer-control custom radio">
-		<label><input type ="radio" id="dogsAllowed" value="yes">Yes</label>
-		<label><input type="radio" id="dogsAllowed" value="no">No</label><span style="padding-right:15px;"></span>
+		<label><input type ="radio" name="dogsAllowed"id="yes" value="yes">Yes</label>
+		<label><input type="radio" name="dogsAllowed" id="no" value="no">No</label><span style="padding-right:15px;"></span>
 		</div>
 		<div class="radio">	
 		<label for="customer-control customer radio">On-Site Parking Available?<span style="padding-right:15px;"></span></label>
-		<label class="radio-inline"> <input type ="radio" id="parking" value="yes">Yes</label>
-		<label class="radio-inline"><input type="radio" id="parking" value="no">No</label><span style="padding-right:15px;"></span>
+		<label class="radio-inline"> <input type ="radio" name="parking" id="yes" value="yes">Yes</label>
+		<label class="radio-inline"><input type="radio" name="parking" id="no" value="no">No</label><span style="padding-right:15px;"></span>
 		</div>
 		</div>
 		<div class="form-row">

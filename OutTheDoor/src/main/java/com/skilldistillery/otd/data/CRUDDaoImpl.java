@@ -1,5 +1,7 @@
 package com.skilldistillery.otd.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -7,29 +9,36 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.otd.entities.Activity;
+import com.skilldistillery.otd.entities.Location;
 
 @Service
 @Transactional
 public class CRUDDaoImpl implements CRUDDao {
 	@PersistenceContext
 	private EntityManager em;
-	
+
 	@Override
 	public void updateActivity(Activity activity, int id) {
-		
-			Activity updated = em.find(Activity.class, id);
-			if (activity.getTitle() != null) {
-				updated.setTitle(activity.getTitle());
-			}
-			if(activity.getDescription()!=null) {
-				updated.setDescription(activity.getDescription());
-			}
-			if(activity.getDifficulty()!=0){
-				updated.setDifficulty(activity.getDifficulty());
-			}
-			
-			
-			
+
+		Activity updated = em.find(Activity.class, id);
+		if (activity.getTitle() != null) {
+			updated.setTitle(activity.getTitle());
+		}
+		if (activity.getDescription() != null) {
+			updated.setDescription(activity.getDescription());
+		}
+		if (activity.getDifficulty() != 0) {
+			updated.setDifficulty(activity.getDifficulty());
+		}
+
+	}
+
+	@Override
+	public int addLocation(Location location) {
+		em.persist(location);
+		em.flush();
+		int locId = location.getId();
+		return locId;
 	}
 
 	@Override
@@ -41,13 +50,12 @@ public class CRUDDaoImpl implements CRUDDao {
 
 	@Override
 	public boolean deleteActivity(int activityId) {
-			boolean complete = false;
-			Activity t = em.find(Activity.class, activityId);
-			em.remove(t);
-			complete = em.contains(t);
-			return complete;
+		boolean complete = false;
+		Activity t = em.find(Activity.class, activityId);
+		em.remove(t);
+		complete = em.contains(t);
+		return complete;
 
-		}
+	}
 
-	
 }
