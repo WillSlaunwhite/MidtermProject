@@ -7,7 +7,7 @@ public interface CRUDDao {
 	void updateActivity(Activity activity, int id);
 	Activity addActivity(Activity activity);
 	boolean deleteActivity(int activityId);
-	int addLocation(Location location);
+	Location addLocation(Location location);
 
 
 }

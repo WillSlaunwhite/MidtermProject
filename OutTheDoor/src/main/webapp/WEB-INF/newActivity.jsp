@@ -16,7 +16,7 @@
 Just fill out the form below for a new activity and we'll add it to the database!
 </div>
 <div class="container bg-secondary text-white">
-<form action="addActivity.do">
+<form action="addActivity.do" method="POST">
 <div class="form-row">
 <div class="col-sm-2">
 <label for="title">Activity Title:</label> <input type="text" name="title"/> 

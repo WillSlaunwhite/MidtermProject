@@ -34,11 +34,19 @@ public class CRUDDaoImpl implements CRUDDao {
 	}
 
 	@Override
-	public int addLocation(Location location) {
+	public Location addLocation(Location location) {
+		String jpql = "SELECT l from Location l where l.zipCode=:zip";
+		List<Location> locs = em.createQuery(jpql, 
+				Location.class).setParameter("zip",
+						location.getZipCode()).getResultList();
+		if(locs.size()!=0) {
+			location = locs.get(0);
+		}else {
 		em.persist(location);
-		em.flush();
-		int locId = location.getId();
-		return locId;
+;		em.flush();
+		return location;
+	}
+		return location;
 	}
 
 	@Override
