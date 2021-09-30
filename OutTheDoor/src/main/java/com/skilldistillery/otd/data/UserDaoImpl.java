@@ -30,4 +30,11 @@ public class UserDaoImpl implements UserDao {
 		
 		return user;
 	}
+
+	@Override
+	public User createUser(User user) {
+		em.persist(user);
+		em.flush();
+		return user;
+	}
 }
