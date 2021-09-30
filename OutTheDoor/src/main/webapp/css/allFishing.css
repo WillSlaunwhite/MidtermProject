@@ -6,3 +6,13 @@ body {
   background-image: url('https://live.staticflickr.com/65535/51534838877_6abb0954ef_z.jpg');
 background-repeat: no-repeat; background-size: cover; 
 }
+.navbar-custom{
+	background-color: transparent;
+	font-family: didot, serif;
+	
+}
+.navbar-text{
+	font-family: didot, serif;
+	color: black;
+	
+}
