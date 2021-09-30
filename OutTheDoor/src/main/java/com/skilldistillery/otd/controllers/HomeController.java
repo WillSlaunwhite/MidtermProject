@@ -30,6 +30,12 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(path = {"/", "home.do"} )
+	public String home(Model model) { 
+		model.addAttribute("DEBUG", userDao.findByUsername("admin"));
+		return "home";
+	}
+	
 	@RequestMapping(path="getAllHiking.do", method=RequestMethod.GET)
 	public String allHikes(Model model) {
 		model.addAttribute("results", searchDao.findAllHiking());
@@ -78,5 +84,5 @@ public class HomeController {
 			return "searchResults";
 	}
 		
-	}
+}
 
