@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -34,18 +35,38 @@ public class CRUDDaoImpl implements CRUDDao {
 	}
 
 	@Override
-	public int addLocation(Location location) {
+	public Location addLocation(Location location) {
+		String jpql = "SELECT l from Location l where l.zipCode=:zip";
+		List<Location> locs = em.createQuery(jpql, 
+				Location.class).setParameter("zip",
+						location.getZipCode()).getResultList();
+		if(locs.size()!=0) {
+			location = locs.get(0);
+		}else {
 		em.persist(location);
-		em.flush();
-		int locId = location.getId();
-		return locId;
+;		em.flush();
+		return location;
+	}
+		return location;
 	}
 
 	@Override
-	public Activity addActivity(Activity activity) {
+	public Activity addActivity(Activity activity, Location location) {
 		em.persist(activity);
 		em.flush();
+		String jpql = "Update Activity a "
+				+ "set location_id = :loc "
+				+ "where a.id = :id";
+		em.createQuery(jpql).setParameter("loc", location.getId())
+		.setParameter("id", activity.getId());
+//		String jpql2 = "Update Activity a "
+//				+ "set category_id = :cat "
+//				+ "where a.id = :id";
+//		em.createQuery(jpql2).setParameter("cat", id)
+//		.setParameter("id", activity.getId());
+//		
 		return activity;
+		
 	}
 
 	@Override
@@ -57,5 +78,8 @@ public class CRUDDaoImpl implements CRUDDao {
 		return complete;
 
 	}
+
+	
+	
 
 }

@@ -16,18 +16,11 @@
 Just fill out the form below for a new activity and we'll add it to the database!
 </div>
 <div class="container bg-secondary text-white">
-<form action="addActivity.do">
+<form action="addActivity.do" method="POST">
 <div class="form-row">
 <div class="col-sm-2">
 <label for="title">Activity Title:</label> <input type="text" name="title"/> 
-		<label for="sel1">Select Category</label>
-		<select class="form-control" id="category" name="category">
-		<option>Hiking</option>
-		<option>Biking</option>
-		<option>Kayaking</option>
-		<option>Rafting</option>
-		<option>Fishing</option>
-		</select>
+		
 		</div>
 		</div>
 <div class="form-row">
@@ -45,7 +38,7 @@ Just fill out the form below for a new activity and we'll add it to the database
 <div class="form-row"> 
 <label for="profileURL"> Enter an image URL for the Activity:</label><input type="text" name="profileURL"/>
 </div>
-<di	v class="form-group">
+<div class="form-group">
 		<div class="form-row">
 		<label for="customer-control customer radio">Are Dogs/Pets Allowed?<span style="padding-right:15px;"></span> </label>
 		<div class="customer-control custom radio">
@@ -59,8 +52,7 @@ Just fill out the form below for a new activity and we'll add it to the database
 		</div>
 		</div>
 		</div>
-			<input type="submit" value="Add Location" />
-		
+			<input type="submit" value="Add activity" />
 </form>
 </div>
 </div>
