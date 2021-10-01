@@ -9,7 +9,7 @@ public interface CRUDDao {
 	void updateActivity(Activity activity, int id);
 	boolean deleteActivity(int activityId);
 	Location addLocation(Location location);
-	Activity addActivity(Activity activity, HttpSession session);
+	Activity addActivity(Activity activity, Location location);
 
 
 }

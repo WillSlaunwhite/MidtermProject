@@ -38,8 +38,7 @@ public class CRUDController {
 		return mv;
 	}
 	@RequestMapping(path="getAdd.do",method=RequestMethod.GET)
-	public String createNewActivity(@RequestParam(name="id")int id,HttpSession session) {
-		session.setAttribute("category", id);
+	public String createNewActivity(HttpSession session) {
 		return "newLocation";
 	}
 	@RequestMapping(path="addLocation.do")
@@ -52,12 +51,19 @@ public class CRUDController {
 		return mv;
 	}
 	
-	
+	@RequestMapping(path="getDelete.do")
+	public ModelAndView deleteActivity(Integer id) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("id", id);
+		mv.setViewName("delete");
+		return mv;
+	}
 	
 	@RequestMapping(path="addActivity.do")
-	public ModelAndView addActivity(Activity activity, HttpSession session) {
+	public ModelAndView addActivity(Activity activity,HttpSession session) {
 		ModelAndView mv = new ModelAndView();
-		crudDao.addActivity(activity,session);
+		Location t = (Location) session.getAttribute("location");
+		crudDao.addActivity(activity,t);
 		mv.addObject("activity", activity);
 		mv.setViewName("activity");
 		return mv;

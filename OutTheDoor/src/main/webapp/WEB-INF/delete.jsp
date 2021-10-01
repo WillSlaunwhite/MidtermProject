@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Delete</title>
 </head>
 <body>
-
+<h1>test</h1>
+<h3>${id }</h3>
 </body>
 </html>

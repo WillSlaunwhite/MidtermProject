@@ -51,22 +51,20 @@ public class CRUDDaoImpl implements CRUDDao {
 	}
 
 	@Override
-	public Activity addActivity(Activity activity, HttpSession session) {
-		Location loc = (Location) session.getAttribute("location");
-		int cat = (int)session.getAttribute("category");
+	public Activity addActivity(Activity activity, Location location) {
 		em.persist(activity);
 		em.flush();
-		String jpql = "Update activity "
+		String jpql = "Update Activity a "
 				+ "set location_id = :loc "
 				+ "where a.id = :id";
-		em.createQuery(jpql).setParameter("loc", loc.getId())
+		em.createQuery(jpql).setParameter("loc", location.getId())
 		.setParameter("id", activity.getId());
-		String jpql2 = "Update activity "
-				+ "set category_id = :cat "
-				+ "where a.id = :id";
-		em.createQuery(jpql2).setParameter("cat", cat)
-		.setParameter("id", activity.getId());
-		
+//		String jpql2 = "Update Activity a "
+//				+ "set category_id = :cat "
+//				+ "where a.id = :id";
+//		em.createQuery(jpql2).setParameter("cat", id)
+//		.setParameter("id", activity.getId());
+//		
 		return activity;
 		
 	}
