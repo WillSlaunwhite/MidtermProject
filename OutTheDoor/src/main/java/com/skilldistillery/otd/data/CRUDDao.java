@@ -6,10 +6,10 @@ import com.skilldistillery.otd.entities.Activity;
 import com.skilldistillery.otd.entities.Location;
 
 public interface CRUDDao {
-	void updateActivity(Activity activity, int id);
+	Activity updateActivity(Activity activity, int id);
 	boolean deleteActivity(int activityId);
 	Location addLocation(Location location);
-	Activity addActivity(Activity activity, Location location);
+	Activity addActivity(Activity activity, int categoryID, int locationID);
 
 
 }

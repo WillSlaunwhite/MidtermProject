@@ -19,7 +19,7 @@ public class CRUDDaoImpl implements CRUDDao {
 	private EntityManager em;
 
 	@Override
-	public void updateActivity(Activity activity, int id) {
+	public Activity updateActivity(Activity activity, int id) {
 
 		Activity updated = em.find(Activity.class, id);
 		if (activity.getTitle() != null) {
@@ -31,7 +31,17 @@ public class CRUDDaoImpl implements CRUDDao {
 		if (activity.getDifficulty() != 0) {
 			updated.setDifficulty(activity.getDifficulty());
 		}
-
+		if (activity.getProTips().length()>0) {
+			updated.setProTips(activity.getProTips());
+		}
+		updated.setHandicapAccessible(activity.isHandicapAccessible()); 
+		updated.setDogsAllowed(activity.isDogsAllowed());
+		updated.setParking(activity.isParking());
+		
+		
+		
+		
+return updated;
 	}
 
 	@Override
@@ -44,37 +54,37 @@ public class CRUDDaoImpl implements CRUDDao {
 			location = locs.get(0);
 		}else {
 		em.persist(location);
-;		em.flush();
+		em.flush();
 		return location;
 	}
 		return location;
 	}
 
 	@Override
-	public Activity addActivity(Activity activity, Location location) {
+	public Activity addActivity(Activity activity,int categoryId,int locationID) {
 		em.persist(activity);
 		em.flush();
 		String jpql = "Update Activity a "
 				+ "set location_id = :loc "
 				+ "where a.id = :id";
-		em.createQuery(jpql).setParameter("loc", location.getId())
-		.setParameter("id", activity.getId());
-//		String jpql2 = "Update Activity a "
-//				+ "set category_id = :cat "
-//				+ "where a.id = :id";
-//		em.createQuery(jpql2).setParameter("cat", id)
-//		.setParameter("id", activity.getId());
-//		
+		em.createQuery(jpql).setParameter("loc", locationID)
+		.setParameter("id", activity.getId()).executeUpdate();
+		String jpql2 = "Update Activity a "
+				+ "set category_id = :cat "
+				+ "where a.id = :id";
+		em.createQuery(jpql2).setParameter("cat", categoryId)
+		.setParameter("id", activity.getId()).executeUpdate();
+		
 		return activity;
 		
 	}
 
 	@Override
 	public boolean deleteActivity(int activityId) {
-		boolean complete = false;
+		boolean complete = true;
 		Activity t = em.find(Activity.class, activityId);
 		em.remove(t);
-		complete = em.contains(t);
+		complete = !em.contains(t);
 		return complete;
 
 	}
