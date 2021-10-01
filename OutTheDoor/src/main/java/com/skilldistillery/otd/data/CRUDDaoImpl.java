@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -50,9 +51,22 @@ public class CRUDDaoImpl implements CRUDDao {
 	}
 
 	@Override
-	public Activity addActivity(Activity activity) {
+	public Activity addActivity(Activity activity, HttpSession session) {
+		Location loc = (Location) session.getAttribute("location");
+		int cat = (int)session.getAttribute("category");
 		em.persist(activity);
 		em.flush();
+		String jpql = "Update activity "
+				+ "set location_id = :loc "
+				+ "where a.id = :id";
+		em.createQuery(jpql).setParameter("loc", loc.getId())
+		.setParameter("id", activity.getId());
+		String jpql2 = "Update activity "
+				+ "set category_id = :cat "
+				+ "where a.id = :id";
+		em.createQuery(jpql2).setParameter("cat", cat)
+		.setParameter("id", activity.getId());
+		
 		return activity;
 		
 	}
@@ -66,5 +80,8 @@ public class CRUDDaoImpl implements CRUDDao {
 		return complete;
 
 	}
+
+	
+	
 
 }

@@ -36,7 +36,7 @@
 <!-- Add Button -->
 <form action="getAdd.do">
 <p align="right">
-<input type="hidden" name="id">
+<input type="hidden" name="id" value ="${results[0].category.id}">
   <button class="add" type="submit"><i class="fa fa-bars"></i> Add</button></p>
   </form>
   

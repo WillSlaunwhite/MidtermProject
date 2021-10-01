@@ -1,5 +1,7 @@
 package com.skilldistillery.otd.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,14 +38,16 @@ public class CRUDController {
 		return mv;
 	}
 	@RequestMapping(path="getAdd.do",method=RequestMethod.GET)
-	public String createNewActivity() {
+	public String createNewActivity(@RequestParam(name="id")int id,HttpSession session) {
+		session.setAttribute("category", id);
 		return "newLocation";
 	}
 	@RequestMapping(path="addLocation.do")
-	public ModelAndView addLocation(Location location) {
+	public ModelAndView addLocation(Location location,HttpSession session) {
 		ModelAndView mv = new ModelAndView();
 		Location t = crudDao.addLocation(location);
 		mv.addObject("location", t);
+		session.setAttribute("location", t);
 		mv.setViewName("newActivity");
 		return mv;
 	}
@@ -51,9 +55,9 @@ public class CRUDController {
 	
 	
 	@RequestMapping(path="addActivity.do")
-	public ModelAndView addActivity(Activity activity) {
+	public ModelAndView addActivity(Activity activity, HttpSession session) {
 		ModelAndView mv = new ModelAndView();
-		crudDao.addActivity(activity);
+		crudDao.addActivity(activity,session);
 		mv.addObject("activity", activity);
 		mv.setViewName("activity");
 		return mv;
