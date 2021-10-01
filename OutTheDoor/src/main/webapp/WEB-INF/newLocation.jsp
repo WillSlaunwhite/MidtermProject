@@ -15,7 +15,7 @@
 <form action="addLocation.do" method="POST">
 <div class="form-group">
 		<!-- <div class="form-row"> -->
-		<label for="street">City: </label> <input type="text" name="city"/> 
+		<label for="city">City: </label> <input type="text" name="city"/> 
 		<label for="state">State (ex: CO or TX):</label> <input type="text" name="state"/> 
 		<label for="zipCode">Zip Code:</label> <input type="number" name="zipCode"/> 
 		</div>

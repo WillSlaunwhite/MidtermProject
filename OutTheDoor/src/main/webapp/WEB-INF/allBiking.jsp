@@ -35,7 +35,7 @@
 <!-- Add Button -->
 <form action="getAdd.do">
 <p align="right">
-<input type="hidden" name="id" value="${activity.id }">
+<input type="hidden" name="id" value="2">
   <button class="add" type="submit"><i class="fa fa-bars"></i> Add</button></p>
   </form>
 <h1 style="font-family:didot, serif; font-size:75px; text-align:center; color:black; font-variant: small-caps">Biking</h1>

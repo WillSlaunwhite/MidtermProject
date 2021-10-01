@@ -50,6 +50,11 @@ Just fill out the form below for a new activity and we'll add it to the database
 		<label class="radio-inline"> <input type ="radio" name="parking" value="yes">Yes</label>
 		<label class="radio-inline"><input type="radio" name="parking" value="no">No</label><span style="padding-right:15px;"></span>
 		</div>
+			<label for="customer-control customer radio">Handicapped Accessible?<span style="padding-right:15px;"></span> </label>
+		<div class="customer-control custom radio">
+		<label><input type ="radio" name ="handicapAccessible" id="yes" value="yes">Yes</label>
+		<label><input type="radio" name="handicapAccessible" id="no" value="no">No</label><span style="padding-right:15px;"></span>
+		</div>
 		</div>
 		</div>
 			<input type="submit" value="Add activity" />

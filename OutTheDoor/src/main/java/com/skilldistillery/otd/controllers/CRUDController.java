@@ -32,13 +32,14 @@ public class CRUDController {
 	@RequestMapping(path="update.do", method=RequestMethod.POST)
 	public ModelAndView updateActivity(Activity activity) { 
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("activity", activity);
-		crudDao.updateActivity(activity, activity.getId());
+		Activity updated = crudDao.updateActivity(activity, activity.getId());
+		mv.addObject("activity", updated);	
 		mv.setViewName("activity");
 		return mv;
 	}
-	@RequestMapping(path="getAdd.do",method=RequestMethod.GET)
-	public String createNewActivity(HttpSession session) {
+	@RequestMapping(path="getAdd.do")
+	public String createNewActivity(@RequestParam(name="id")Integer id,HttpSession session) {
+		session.setAttribute("categoryID", id);
 		return "newLocation";
 	}
 	@RequestMapping(path="addLocation.do")
@@ -46,24 +47,35 @@ public class CRUDController {
 		ModelAndView mv = new ModelAndView();
 		Location t = crudDao.addLocation(location);
 		mv.addObject("location", t);
-		session.setAttribute("location", t);
+		session.setAttribute("locationID", t.getId());
 		mv.setViewName("newActivity");
 		return mv;
 	}
 	
 	@RequestMapping(path="getDelete.do")
-	public ModelAndView deleteActivity(Integer id) {
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("id", id);
-		mv.setViewName("delete");
-		return mv;
+	public String deleteActivity(@RequestParam("id")Integer id) {
+		boolean delete = crudDao.deleteActivity(id);
+		if(delete) {
+		return "home";
+		}else {
+			return "error";
+		}
+	
+	
+	
+//	public ModelAndView deleteActivity(Integer id) {
+//		ModelAndView mv = new ModelAndView();
+//		mv.addObject("id", id);
+//		mv.setViewName("delete");
+//		return mv;
 	}
 	
 	@RequestMapping(path="addActivity.do")
 	public ModelAndView addActivity(Activity activity,HttpSession session) {
 		ModelAndView mv = new ModelAndView();
-		Location t = (Location) session.getAttribute("location");
-		crudDao.addActivity(activity,t);
+		int locationID = (int) session.getAttribute("locationID");
+		int categoryID = (int) session.getAttribute("categoryID");
+		crudDao.addActivity(activity,categoryID, locationID);
 		mv.addObject("activity", activity);
 		mv.setViewName("activity");
 		return mv;
