@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Error</title>
+<title>Title</title>
 </head>
 <body>
-<h3> empty error page</h3>
+Welcome to OutTheDoor ${user.username}
+<a href="home.do">return home</a>
 </body>
 </html>

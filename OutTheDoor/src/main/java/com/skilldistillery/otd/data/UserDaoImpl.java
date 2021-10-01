@@ -32,7 +32,12 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public User createUser(User user) {
+	public User createUser(String username, String password) {
+		User user = new User();
+		user.setUsername(username);
+		user.setPassword(password);
+		user.setRole("user");
+		user.setEnabled(true);
 		em.persist(user);
 		em.flush();
 		return user;

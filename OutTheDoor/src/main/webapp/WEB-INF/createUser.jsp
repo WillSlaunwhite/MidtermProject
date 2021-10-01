@@ -7,11 +7,11 @@
 <link rel="stylesheet" href="./css/createUser.css"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Create New User</title>
 </head>
 <body>
 
-<form class="vh-100" action="home.do" method="POST">
+<form class="vh-100" action="createNewUser.do" method="GET">
   <div class="container h-80">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-9">
@@ -29,7 +29,7 @@
               </div>
               <div class="col-md-9 pe-5">
 
-                <input name="newUsername" type="text" class="form-control" placeholder="username" />
+                <input name="username" type="text" placeholder="username" />
 
               </div>
             </div>
@@ -44,12 +44,12 @@
               </div>
               <div class="col-md-9 pe-5">
 
-                <input name="newPassword" type="password" class="form-control" placeholder="password" />
+                <input name="password" type="password" placeholder="password" />
 
               </div>
             </div>
 
-            <hr class="mx-n3">
+           <!--  <hr class="mx-n3">
 
             <div class="row align-items-center py-3">
               <div class="col-md-3 ps-5">
@@ -61,8 +61,8 @@
 
                 <input type="password" class="form-control" placeholder="repeat password"/>
 
-              </div>
-            </div>
+              </div> 
+            </div> --->
 
             <hr class="mx-n3">
 
