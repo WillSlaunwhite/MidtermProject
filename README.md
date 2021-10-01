@@ -3,8 +3,11 @@ Out The Door
 
 ### Team Metal Havoc
 Scrum Master: Caleb Gardner
+
 Database Administrator: Jessica Armendariz
+
 Repository Owner: William Slaunwhite
+
 Content Creator: Kristin Bowman
 
 ### Website
