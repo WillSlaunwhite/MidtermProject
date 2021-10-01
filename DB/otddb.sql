@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `activity` (
   `parking` TINYINT NULL,
   `description` TEXT NOT NULL,
   `profile_url` VARCHAR(1000) NULL,
-  `category_id` INT NOT NULL,
+  `category_id` INT NULL,
   `location_id` INT NULL,
   `difficulty` INT NOT NULL,
   `distance_miles` DOUBLE NOT NULL,
