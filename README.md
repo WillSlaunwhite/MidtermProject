@@ -26,7 +26,7 @@ http://3.15.64.207:8080/OutTheDoor/
 - CRUD
 
 ### Purpose
-Out The Door is an application for the on-the-go adventurer. When navigating to (IP ADDRESS) the user can create an account and log in. The home page allows the user to search by keyword or select and out door activity by category i.e. Hiking, Biking, Kayaking, Rafting, or Fishing.
+Out The Door is an application for the on-the-go adventurer. When navigating to our site the user can create an account and log in. The home page allows the user to search by keyword or select and out door activity by category i.e. Hiking, Biking, Kayaking, Rafting, or Fishing.
 
 The user can then narrow down their search and browse through the keyword results or browse through all existing hiking trails. The user is also capable of adding new data to the website by creating new activities, editing existing activities, or deleting activities that are no longer available.
 
