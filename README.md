@@ -8,7 +8,7 @@ Out The Door
 - Content Creator: Kristin Bowman
 
 ### Website
-http://3.15.64.207:8080/OutTheDoor/
+http://3.22.69.242:8080/OutTheDoor/signIn.do?username=admin&password=otdadmin
 
 ### Technologies
 - HTML
