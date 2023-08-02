@@ -8,22 +8,20 @@ Out The Door
 - Content Creator: Kristin Bowman
 
 ### Website
-http://3.22.69.242:8080/OutTheDoor/signIn.do?username=admin&password=otdadmin
+outthedoor.dev
 
 ### Technologies
-- HTML
+- HTML/CSS
 - GitHub
 - Spring Tool Suite 4
 - JDBC (Java Database Connectivity)
 - Gradle
-- Maven and Dependencies
 - Tomcat
 - JavaServer Pages (JSPs)
 - JSP Standard Tag Library (JSTL)
 - Amazon Web Services
 - Bootstrap CSS Framework
-- SQL Database
-- CRUD
+- MySQL Workbench 
 
 ### Purpose
 Out The Door is an application for the on-the-go adventurer. When navigating to our site the user can create an account and log in. The home page allows the user to search by keyword or select and out door activity by category i.e. Hiking, Biking, Kayaking, Rafting, or Fishing.
